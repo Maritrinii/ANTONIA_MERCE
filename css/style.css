@@ -9,8 +9,8 @@
     --btn-color-hover:rgb(170, 55, 111);
     --text-color: black;
     --padding: 2rem 6rem;
-    --font-modernoir:;
-    --font-futura:;
+    --font-modernoir:tt-modernoir;
+    --font-futura:futura-pt-condensed;
     --transition: all 0.3s;
 }
 
@@ -23,9 +23,10 @@ nav {
     align-items: center;
     justify-content: space-around;
     background-color: aquamarine;
+    position: fixed;
 }
 
-.menu {
+.menu-left, .menu-right {
     display: flex;
     justify-content: space-around;
     gap: 2rem;
@@ -35,6 +36,7 @@ nav {
     color: black;
     list-style: none;
     margin: 0;
+    font-family: var(--font-futura);
 }
 
 .menulink > a {
@@ -58,19 +60,32 @@ nav {
 header {
     text-align: center;
     padding: var(--padding);
+    background-color: antiquewhite;
+    padding-bottom: 5rem;
+    padding-top: 5rem;
 }
 
 
 h1 {
-    font-size: 5rem;
-    font-family: "tt-modernoir", sans-serif;
+    font-size: 8rem;
+    font-family: var(--font-modernoir);
     padding-bottom: 0.5rem;
 }
 
 h2 {
-    font-size: 2rem;
-    font-family: "futura-pt-condensed", sans-serif;
+    font-size: 3rem;
+    font-family:var(--font-futura);
     padding-bottom: 2rem;
+}
+
+.img-header > img {
+    width: 100%;
+    height: auto;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: block;
+    padding-bottom: 3rem;
+    align-items: center;
 }
 
 .text-header {
@@ -81,12 +96,12 @@ h2 {
 
 .btn-header {
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.5rem;
     background-color: var(--btn-color);
     color: var(--text-color);
     padding: 1rem 2rem;
     border: black solid 1.5px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-futura);
 }
 
 .btn-header:hover {
@@ -99,6 +114,11 @@ h2 {
 #entradas, #program {
     padding: var(--padding);
     text-align: center;
+    height: 100vh;
+}
+
+#entradas {
+    background-color: aqua;
 }
 
 .cards-entradas {
@@ -121,8 +141,12 @@ h2 {
 
 #entradas > h3 {
     font-size: 3rem;
-    font-style: var(--font-modernoir);
     padding: 1rem;
+}
+
+h3 {
+    font-style: var(--font-modernoir);
+
 }
 
 .price {
@@ -138,12 +162,12 @@ h2 {
 
 .btn-entradas {
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.5rem;
     background-color: var(--btn-color);
     color: var(--text-color);
     padding: 1rem 2rem;
     border: black solid 1.5px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-futura);
 }
 
 .btn-entradas:hover {
@@ -196,12 +220,12 @@ h2 {
 
 .btn-programa {
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.5rem;
     background-color: var(--btn-color);
     color: var(--text-color);
     padding: 1rem 2rem;
     border: black solid 1.5px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-futura);
 }
 
 .btn-programa:hover {
@@ -209,6 +233,7 @@ h2 {
     background-color: var(--btn-color-hover);
 }
 
+/* FOTO/CITA */
 
 
 
@@ -223,7 +248,7 @@ h2 {
 
     .menu {
         margin: 0;
-        background: black;
+        background: rgb(146, 146, 146);
         position: fixed;
         right: -100%;
         top: 70px;
