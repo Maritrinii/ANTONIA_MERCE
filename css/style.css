@@ -8,6 +8,8 @@
     --btn-color: rgb(241, 124, 181); 
     --text-color: black;
     --padding: 2rem 6rem;
+    --font-modernoir:;
+    --font-futura:;
 }
 
 
@@ -66,10 +68,10 @@ h2 {
     padding-bottom: 2rem;
 }
 
-p {
+.text-header {
     font-size: 1.3rem;
     font-family: 'Times New Roman', Times, serif;
-    padding-bottom: 2rem;
+    padding: 0 6rem 4rem 6rem ;
 }
 
 .btn-header {
@@ -89,9 +91,52 @@ p {
     text-align: center;
 }
 
-h3 {
-    font-size: 2rem;
+.cards-entradas {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    flex-wrap: wrap;
+    padding-bottom: 4rem;
 }
+
+.card {
+    border: black solid 1.5px;
+    background-color: blanchedalmond;
+    padding: 1.5rem;
+    width: 200px;
+    text-align: center;
+    
+}
+
+
+#entradas > h3 {
+    font-size: 3rem;
+    font-style: var(--font-modernoir);
+    padding: 1rem;
+}
+
+.price {
+    font-size: 2rem;
+    padding: 0;
+}
+
+.titulo-card {
+    font-family: var(--font-futura);
+    font-size: 1.5rem;
+    padding-bottom: 5rem;
+}
+
+.btn-entradas {
+    text-decoration: none;
+    font-size: 1rem;
+    background-color: var(--btn-color);
+    color: var(--text-color);
+    padding: 1rem 2rem;
+    border: black solid 1.5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
 
 
 
