@@ -146,6 +146,10 @@ h2 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.btn-entradas:hover {
+    transition: var(--transition);
+    background-color: var(--btn-color-hover);
+}
 
 /* PROGRAMACIÓN */
 #program > h3 {
@@ -200,6 +204,10 @@ h2 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.btn-programa:hover {
+    transition: var(--transition);
+    background-color: var(--btn-color-hover);
+}
 
 
 
