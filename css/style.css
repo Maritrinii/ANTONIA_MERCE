@@ -5,8 +5,8 @@
 }
 
 :root {
-    --btn-color: rgb(241, 124, 181);
-    --btn-color-hover:rgb(170, 55, 111);
+    --btn-color: rgb(210, 194, 144);
+    --btn-color-hover:rgb(167, 156, 119);
     --text-color: black;
     --padding: 2rem 6rem;
     --font-modernoir:tt-modernoir;
@@ -25,7 +25,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: aquamarine;
+    background-color: rgb(0, 0, 0);
     position: fixed;
     top: 0;
     left: 0;
@@ -55,7 +55,7 @@ nav > .menu {
 }
 
 .menulink {
-    color: black;
+    color: rgb(255, 255, 255);
     list-style: none;
     margin: 0;
     font-family: var(--font-futura);
@@ -65,7 +65,7 @@ nav > .menu {
     text-decoration: none;
     font-size: 1.2rem;
     transition: var(--transition);
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .menulink:hover > a {
@@ -115,7 +115,7 @@ h1 {
 h2 {
     font-size: 3rem;
     font-family:var(--font-futura);
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
 }
 
 .img-header > img {
@@ -156,14 +156,18 @@ h2 {
     text-align: center;
     min-height: calc(100vh - 70px);
     scroll-margin-top: 70px;
-    background-color: rgb(78, 128, 128);
+    background-color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 12px double white;
+    border: 8px double white;
     justify-content: flex-start;
 }
 
+h3, .cards-entradas, .btn-entradas {
+    position: relative;
+    z-index: 1;
+}
 .cards-entradas {
     display: flex;
     justify-content: center;
@@ -176,7 +180,7 @@ h2 {
     border: white solid 1.5px;
     outline: 6px double white;
     outline-offset: 4px;
-    background-color: blanchedalmond;
+    background-image: url("../img/old_noise_video.mp4");
     padding: 1.5rem;
     width: 300px;
     height: 450px;
@@ -186,6 +190,8 @@ h2 {
     align-items: center;
     justify-content: center;
     text-align: center;
+    position: relative;
+    overflow: hidden;
     
 }
 
@@ -215,6 +221,7 @@ h3 {
     font-family: var(--font-modernoir);
     font-size: 2.6rem;
     padding-bottom: 1.2rem;
+    color: white;
     
 }
 
@@ -223,6 +230,14 @@ h3 {
     font-family: var(--font-futura);
     font-size: 3.5rem;
     padding: 0;
+    color: white;
+
+}
+
+.cont-card {
+    position: relative;
+    z-index: 1;
+    color: white;
 }
 
 
@@ -239,6 +254,16 @@ h3 {
 .btn-entradas:hover {
     transition: var(--transition);
     background-color: var(--btn-color-hover);
+}
+
+.video-entradas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }
 
 /* PROGRAMACIÓN */
@@ -258,7 +283,6 @@ h3 {
 
 .card-prom {
     border: black solid 1.5px;
-    background-color: blanchedalmond;
     padding: 1.5rem;
     width: 200px;
     text-align: center;
@@ -310,7 +334,7 @@ h3 {
     justify-content: center;
     text-align: center;
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
 
 }
 
@@ -335,6 +359,103 @@ h3 {
 
 }
 
+/* FORMULARIO */
+#formulario {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.video-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#formulario {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contenido-formulario {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+#formulario {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contenido-formulario {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+
+/* FOOTER */
+
+
 
 
 
@@ -347,6 +468,7 @@ h3 {
     .burger {
         display: block;
         padding-right: 1rem;
+        color: white;
     }
 
     .menu {
@@ -457,7 +579,7 @@ h3 {
 
     /* VIDEO */
     #video {
-        height: auto;
+        height: 100vh;
         padding: 3rem 2rem;
     }
 
