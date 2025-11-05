@@ -14,6 +14,9 @@
     --transition: all 0.3s;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 /* NAVBAR */
 nav {
@@ -63,6 +66,7 @@ header {
     background-color: antiquewhite;
     padding-bottom: 5rem;
     padding-top: 5rem;
+    scroll-margin-top: 70px;
 }
 
 
@@ -84,7 +88,7 @@ h2 {
     max-width: 1300px;
     margin: 0 auto;
     display: block;
-    padding-bottom: 3rem;
+    padding-bottom: 5rem;
     align-items: center;
 }
 
@@ -115,6 +119,7 @@ h2 {
     padding: var(--padding);
     text-align: center;
     height: 100vh;
+    scroll-margin-top: 70px;
 }
 
 #entradas {
