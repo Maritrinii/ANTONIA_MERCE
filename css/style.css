@@ -24,15 +24,34 @@ nav {
     height: 70px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: aquamarine;
     position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    z-index: 999;
+}
+
+nav > .menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
 .menu-left, .menu-right {
     display: flex;
     justify-content: space-around;
     gap: 2rem;
+}
+
+.menu-left {
+    padding-left: 5rem;
+}
+
+.menu-right {
+    padding-right: 5rem;
 }
 
 .menulink {
@@ -52,6 +71,23 @@ nav {
 .menulink:hover > a {
     color: white;
 }
+
+.logo-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex: 0 0 auto;
+}
+
+.logo-menu img {
+    max-height: 45px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+
 
 .burger {
     cursor: pointer;
@@ -272,8 +308,11 @@ h3 {
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 678px) {
+
+    /* MENÚ */
     .burger {
         display: block;
+        padding-right: 1rem;
     }
 
     .menu {
@@ -296,7 +335,49 @@ h3 {
         text-align: center;
     }
 
+    .logo-menu img {
+        padding-left: 1rem;
+    }
+
     .menu-show {
         right: 0;
+    }
+
+    /* HEADER */
+    header {
+        padding: 5rem 2rem;
+    }
+
+    h1 {
+        font-size: 3.3rem;
+        font-family: var(--font-modernoir);
+        padding-bottom: 0.5rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        font-family:var(--font-futura);
+        padding-bottom: 1rem;
+    }
+
+    .img-header > img {
+        padding-bottom: 2rem;
+    }
+
+    .text-header {
+        padding: 0;
+        padding-bottom: 2rem;
+        font-size: 1rem;
+
+    }
+
+    .btn-header {
+        text-decoration: none;
+        font-size: 1.2rem;
+        background-color: var(--btn-color);
+        color: var(--text-color);
+        padding: 0.5rem 1rem;
+        border: black solid 1.5px;
+        font-family: var(--font-futura);
     }
 }

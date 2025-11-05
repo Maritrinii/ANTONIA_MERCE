@@ -10,3 +10,17 @@ burger.addEventListener("click", function(){
     menu_opt.classList.toggle("menu-show");
 
 });
+
+// IMAGEN HEADER
+const headerImg = document.querySelector('.img-header img');
+
+function checkWidth() {
+  if (window.innerWidth <= 678) {
+    headerImg.src = 'img/merce_phone.png';
+  } else {
+    headerImg.src = 'img/merce_header.png';
+  }
+}
+
+window.addEventListener('resize', checkWidth);
+window.addEventListener('load', checkWidth);
