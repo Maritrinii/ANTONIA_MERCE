@@ -11,6 +11,7 @@ burger.addEventListener("click", function(){
 
 });
 
+
 // IMAGEN HEADER
 const headerImg = document.querySelector('.img-header img');
 
