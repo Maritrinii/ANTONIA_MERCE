@@ -192,9 +192,26 @@ h3, .cards-entradas, .btn-entradas {
     justify-content: center;
     text-align: center;
     position: relative;
-    overflow: hidden;
+    overflow: hidden; 
+    transition: all 0.3s ease;
     
 }
+
+.card:hover {
+    border-color: var(--btn-color-hover);     
+    outline-color: var(--btn-color-hover);   
+}
+
+.card .titulo-entr,
+.card .price {
+    transition: color 0.3s ease;
+}
+
+.card:hover > .titulo-entr,
+.card:hover > .price {
+    color: red
+}
+
 
 #entradas > h3 {
     font-size: 6rem;
