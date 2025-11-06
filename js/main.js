@@ -12,6 +12,7 @@ burger.addEventListener("click", function(){
 });
 
 
+
 // IMAGEN HEADER
 const headerImg = document.querySelector('.img-header img');
 
@@ -26,7 +27,10 @@ function checkWidth() {
 window.addEventListener('resize', checkWidth);
 window.addEventListener('load', checkWidth);
 
-// ENTRADAS BOTÓN
+
+
+
+// COMPRA ENTRADAS
 document.addEventListener("DOMContentLoaded", function () {
     const inputs = document.querySelectorAll('input[type="number"]');
     const totalPriceElement = document.getElementById("totalPrice");
@@ -46,9 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Si el precio es mayor que 0, se habilita el botón de comprar
             if (totalPrice > 0) {
-                document.getElementById("buyFood").classList.remove("disabled");
+                document.getElementById("buyTicket").classList.remove("disabled");
             } else {
-                document.getElementById("buyFood").classList.add("disabled");
+                document.getElementById("buyTicket").classList.add("disabled");
             }
         });
         totalPriceElement.textContent = totalPrice.toFixed(2) + " €";
@@ -63,6 +67,96 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// VENTANA MODAL
 
-  
+
+
+// FORMULARIO
+  const formulario = document.querySelector('.formulario-news');
+
+  formulario.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const nombre = document.getElementById('nombre').value.trim();
+    const correo = document.getElementById('correo').value.trim();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Validación
+    if (nombre === '') {
+      alert('Por favor ingresa tu nombre.');
+      return;
+    }
+
+    if (!emailRegex.test(correo)) {
+      alert('Por favor ingresa un correo válido.');
+      return;
+    }
+
+    alert(`¡Gracias ${nombre}! Tu correo ${correo} ha sido registrado.`);
+    
+    formulario.reset();
+  });
+
+
+// VENTANA MODAL
+// VENTANA MODAL
+// Seleccionamos elementos
+const cards = document.querySelectorAll(".card");
+const modal = document.querySelector("#modalWindow");
+const modalTitle = document.querySelector("#modalTitle");
+const modalList = document.querySelector("#modalList"); // 👈 CAMBIADO
+const btnClose = document.querySelector(".close");
+const btnAccept = document.querySelector("#closeModalAccept");
+
+// Contenido de cada tarjeta
+const titulos = [
+  "ENTRADA NORMAL",
+  "ENTRADA REDUCIDA",
+  "ENTRADA VIP"
+];
+
+const descripciones = [
+  "Acceso a todas las jornadas del festival. Asientos en zona general. Participación en todas las actividades abiertas al público.",
+
+  "Acceso a una sola jornada del festival (a elegir). Asientos en zona general. Participación en las actividades abiertas del día seleccionado.",
+
+  "Acceso a todas las jornadas del festival. Asientos en zona preferente. Acceso al backstage y merchandising exclusivo."
+];
+
+// Abrir el modal con contenido dinámico
+function openModal(index) {
+  modalTitle.textContent = titulos[index];
+  modalList.innerHTML = "";
+
+  const frases = descripciones[index].split(".");
+  frases.forEach(frase => {
+    if (frase.trim() !== "") {
+      const li = document.createElement("li");
+      li.textContent = frase.trim();
+      modalList.appendChild(li);
+    }
+  });
+
+  modal.classList.add("show-modal");
+}
+
+// Cerrar modal
+function closeModal() {
+  modal.classList.remove("show-modal");
+}
+
+// Evento para cada tarjeta
+cards.forEach((card, index) => {
+  card.addEventListener("click", () => {
+    openModal(index);
+  });
+});
+
+// Botones cerrar
+btnClose.addEventListener("click", closeModal);
+btnAccept.addEventListener("click", closeModal);
+
+// Cerrar haciendo clic fuera
+window.addEventListener("click", (e) => {
+  if (e.target === modal) closeModal();
+});

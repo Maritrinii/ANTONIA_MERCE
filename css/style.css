@@ -12,6 +12,7 @@
     --font-modernoir:tt-modernoir;
     --font-futura:futura-pt-condensed;
     --transition: all 0.3s;
+    --fondo-trans: rgba(0, 0, 0, 0.7);
 }
 
 html {
@@ -248,6 +249,7 @@ h3 {
     color: var(--text-color);
     padding: 1rem 2rem;
     border: black solid 1.5px;
+    transition: all 0.3s ease;
     font-family: var(--font-futura);
 }
 
@@ -266,119 +268,92 @@ h3 {
     z-index: 0;
 }
 
-/* HTML ENTRADAS */
-/* Styling the form inside #foodMenu */
-#foodMenu form {
-    max-width: 728px;
-    min-height: fit-content;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    font-family: var(--font-family);
-    border: #3498db 1px solid;
-}
-
-#foodMenu form div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: var(--input-margin);
-    gap: 2rem;
-}
-
-#foodMenu form label {
-    font-size: 1.4rem;
-    width: 80%;
-    min-width: 5rem;
-    margin: var(--input-margin);
-    color: var(--primary-color);
-}
-
-#foodMenu form input[type="number"] {
-    font-size: 1.4rem;
-    width: 20%;
-    min-width: 3rem;
-    color: var(--primary-color);
-    padding: var(--input-padding);
-    margin: var(--input-margin);
-    border: 1px solid var(--primary-color);
-    border-radius: 5px;
-}
-
-#foodMenu form input[type="number"]:focus {
-    outline: none;
-    color: var(--secondary-color);
-    border: 1px solid var(--secondary-color);
-    box-shadow: 0 0 5px var(--secondary-color);
-}
-
-#foodMenu form .total-price-cont {
-    font-size: 1.6rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2rem 0 0 0;
-}
-
-#foodMenu form #buyFood.disabled {
-    background-color: #ccc;
-    color: #666;
-    cursor: not-allowed;
-}
-
-#foodMenu form .total-price-cont p {
-    color: var(--accent-color);
-}
-
-#foodMenu form input[type="submit"] {
-    padding: var(--input-padding);
-    margin: var(--input-margin);
-    background-color: var(--secondary-color);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 0.2rem;
-    border: white 1px solid;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 1.4rem;
-}
-
-#foodMenu form input[type="submit"]:hover {
-    background-color: white;
-    color: var(--secondary-color);
-    border: 1px solid var(--secondary-color);
-}
-
 
 /* VENTANA MODAL */
-.modalWindow {
+#modalWindow {
     display: none;
     position: fixed;
-    z-index: 1;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--fondo-trans);
     opacity: 0;
     transition: all 0.3s ease-in-out;
-  }
-  
-  .modalWindow.show-modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+#modalWindow.show-modal {
+    display: block;
     opacity: 1;
-  }
-  
-  .modalWindow .modal-cont {
-    background-color: var(--background-light);
-    color: var(--text-light);
+}
+
+#modalWindow > .modal-content {
+    color: white;
+    background-color: var(--text-color);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 2rem;
-    border-radius: 10px;
-    max-width: 500px;
-    text-align: center;
-  }
-  
+    border: 2px solid white;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+    width: 600px;
+    max-width: 90vw;
+    box-sizing: border-box;
+}
+
+#modalWindow > .modal-content > h2 {
+    padding-bottom: 2rem;
+    font-family: var(--font-modernoir);
+}
+
+#modalWindow > .modal-content > p {
+    padding: 0 2rem 2rem;
+    font-size: 1.2rem;
+}
+
+#modalWindow > .modal-content > ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 0;
+    text-align: left;
+    margin: 0;
+}
+
+#modalWindow .modal-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+#closeModalAccept {
+    text-decoration: none;
+    font-size: 1.5rem;
+    background-color: var(--btn-color);
+    color: var(--text-color);
+    padding: 1rem 2rem;
+    border: black solid 1.5px;
+    font-family: var(--font-futura);
+}
+
+#closeModalAccept:hover {
+    transition: var(--transition);
+    background-color: var(--btn-color-hover);
+}
+
+
+#modalWindow .close {
+    align-self: flex-end;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
 
 /* PROGRAMACIÓN */
 #program > h3 {
@@ -429,6 +404,7 @@ h3 {
     color: var(--text-color);
     padding: 1rem 2rem;
     border: black solid 1.5px;
+    transition: all 0.3s ease;
     font-family: var(--font-futura);
 }
 
@@ -448,7 +424,7 @@ h3 {
     justify-content: center;
     text-align: center;
     color: white;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--fondo-trans);
 
 }
 
@@ -484,7 +460,7 @@ h3 {
     justify-content: center;
     text-align: center;
     color: white;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--fondo-trans);
 }
 
 .video-form {
@@ -497,74 +473,76 @@ h3 {
     z-index: -1;
 }
 
-#formulario {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.7);
-}
+.cont-formulario {
+    padding: 2rem 3rem;
+    border-radius: 8px;
+    text-align: center;
+    backdrop-filter: blur(4px);
+  }
+  
+  .cont-formulario > h3 {
+    font-family: var(--font-modernoir);
+    font-size: 6rem;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .cont-formulario > p {
+    font-size: 1.3rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    margin-bottom: 2rem;
+  }
 
-.video-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-}
+  .formulario-news {
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    width: 500px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .formulario-news > label {
+    font-size: 1.5rem;
+    font-family: var(--font-futura);
+  }
+  
+  .formulario-news > input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #999;
+    border-radius: 2px;
+    outline: none;
+    font-size: 1rem;
+  }
+  
+  
+  .formulario-news button {
+    background-color: var(--btn-color);
+    color: var(--text-color);
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-futura);
+    border: black solid 1.5px;
+    font-size: 1.5rem;
+    width: auto;
+    align-self: center;
 
-.video-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  }
 
-.contenido-formulario {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-}
-#formulario {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.7);
-}
+  
+  .formulario-news button:hover {
+    background-color: var(--btn-color-hover);
+  }
 
-.video-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: -1;
-}
 
-.video-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.contenido-formulario {
-  position: relative;
-  z-index: 1;
-  text-align: center;
-}
 
 
 /* FOOTER */
@@ -611,13 +589,19 @@ h3 {
     gap: 25px;
     width: 200px;
     font-size: 1.5rem;
-  }
+}
+
+.social > a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
 
 .social > i {
   cursor: pointer;
 }
 
-.social > i:hover {
+.social > a:hover > i {
     color: var(--btn-color-hover);
     transform: scale(1.2);
 }
@@ -651,10 +635,6 @@ h3 {
   text-align: center;
   font-size: 1.5rem;
 }
-
-
-
-
 
 
 
@@ -791,6 +771,40 @@ h3 {
 
     .text-video {
         font-size: 1.5rem;
+    }
+
+    /* FORMULARIO */
+    #formulario {
+        padding: 1rem 2rem;
+    }
+    
+    #formulario > .cont-formulario > h3 {
+        font-size: 3rem;
+        padding-bottom: 2rem;
+    }
+
+    .cont-formulario {
+        padding: 0;
+    }
+
+    #formulario > .cont-formulario > p {
+        font-size: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .formulario-news {
+        width: 100%;
+        padding: 1rem;
+      }
+
+    .formulario-news > button  {
+        text-decoration: none;
+        font-size: 1.2rem;
+        background-color: var(--btn-color);
+        color: var(--text-color);
+        padding: 0.5rem 1rem;
+        border: black solid 1.5px;
+        font-family: var(--font-futura);
     }
 
 

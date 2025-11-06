@@ -104,11 +104,20 @@
           </div>
   
           <div class="btn">
-            <a href="entradas.html" class="btn-entradas">COMPRAR ENTRADAS</a>
+            <a href="entradas.html" class="btn-entradas" target="_blank">COMPRAR ENTRADAS</a>
           </div>
         </div>
-
       </section>
+
+      <!-- VENTANA MODAL -->
+      <div id="modalWindow">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2 id="modalTitle"></h2>
+          <ul id="modalList"></ul>
+          <button id="closeModalAccept">ACEPTAR</button>
+        </div>
+      </div>
 
       <!-- FOTO/CITA -->
      <section id="video">
@@ -153,6 +162,21 @@
       <div class="video-formulario">
         <video autoplay loop muted playsinline preload="auto" class="video-form" src="img/castanuela_video.mp4" type="video/mp4"></video>
       </div>
+
+      <div class="cont-formulario">
+        <h3>NEWSLETTER</h3>
+        <p class="p-form">Recibe novedades y contenidos exclusivos en tu correo.</p>
+
+        <form class="formulario-news">
+          <label for="nombre">NOMBRE</label>
+          <input type="text" id="nombre" name="nombre" required>
+  
+          <label for="correo">CORREO</label>
+          <input type="email" id="correo" name="correo" required>
+  
+          <button type="submit">ENVIAR</button>
+        </form>
+      </div>
    </section>
 
     <!-- FOOTER -->
@@ -167,9 +191,17 @@
         <p>info@antoniamerce.com</p>
 
         <div class="social">
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-x-twitter"></i>
-          <i class="fa-brands fa-tiktok"></i>
+          <a href="https://www.instagram.com/udit.es?igsh=aGt4NmFjZnRiYngz" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="https://x.com/udit_es?s=21&t=XTs37GJ9GUh0VqnBCOTRjA" target="_blank">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+
+          <a href="https://www.tiktok.com/@udit_es?_r=1&_t=ZN-91A0oE8GeZy" target="_blank">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
         </div>
       </div>
 

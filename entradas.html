@@ -8,73 +8,88 @@
     </head>
     <body>
         <header>
-            <h1>Choose your food menu!</h1>
-            <p>You can add different quantities for each item</p>
+            <h1>COMPRA TUS ENTRADAS</h1>
         </header>
         <main>
-            <section id="foodMenu">
+            <section id="buyTicket">
                 <form action="">
                     <div>
-                        <label for="burger">Burger - 7.9€</label>
+                        <label for="normal">Entrada normal - 30€</label>
                         <input
                             type="number"
-                            name="burger"
-                            id="burger"
+                            name="normal"
+                            id="normal"
                             min="0"
                             value="0"
-                            data-price="7.9" />
+                            data-price="30" />
                     </div>
                     <div>
-                        <label for="pizza">Pizza - 12.30€</label>
+                        <label for="reducida">Entrada reducida - 20€</label>
                         <input
                             type="number"
-                            name="pizza"
-                            id="pizza"
+                            name="reducida"
+                            id="reducida"
                             min="0"
                             value="0"
-                            data-price="12.30" />
+                            data-price="20" />
                     </div>
                     <div>
-                        <label for="salad">Salad - 6€</label>
+                        <label for="vip">Entrada VIP - 40€</label>
                         <input
                             type="number"
-                            name="salad"
-                            id="salad"
+                            name="vip"
+                            id="vip"
                             min="0"
                             value="0"
-                            data-price="6" />
+                            data-price="40" />
                     </div>
-                    <div>
-                        <label for="drink">Drink - 3.50€</label>
-                        <input
-                            type="number"
-                            name="drink"
-                            id="drink"
-                            min="0"
-                            value="0"
-                            data-price="3.50" />
-                    </div>
-                    <div>
-                        <label for="dessert">Dessert - 5€</label>
-                        <input
-                            type="number"
-                            name="dessert"
-                            id="dessert"
-                            min="0"
-                            value="0"
-                            data-price="5" />
-                    </div>
+                    
                     <div class="total-price-cont">
-                        <p>Total price:</p>
+                        <p>Precio total:</p>
                         <p id="totalPrice"></p>
                     </div>
-                    <input id="buyFood" type="submit" value="Buy food menu!" class="disabled" />
+                    <input id="buyFood" type="submit" value="COMPRAR" class="disabled" />
                 </form>
             </section>
         </main>
-        <footer>
-        </footer>
 
-        <script src="js/main.js"></script>
+        <!-- FOOTER -->
+     <footer id="footer">
+      <div class="footer-left">
+        <div class="footer-img">
+          <img src="img/firma.png" alt="Firma Antonia Mercé">
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <p>info@antoniamerce.com</p>
+
+        <div class="social">
+          <a href="https://www.instagram.com/udit.es?igsh=aGt4NmFjZnRiYngz" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="https://x.com/udit_es?s=21&t=XTs37GJ9GUh0VqnBCOTRjA" target="_blank">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+
+          <a href="https://www.tiktok.com/@udit_es?_r=1&_t=ZN-91A0oE8GeZy" target="_blank">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+
+        <div class="politics">
+          <p>POLÍTCA DE PRIVACIDAD</p>
+          <p>AVISO LEGAL</p>
+          <p>CONFIGURACIÓN DE COOKIES</p>
+        </div>
+
+        <div class="copyright">
+          <p>© Martina García💃🏻</p>
+        </div>
+     </footer>
+
+      <script src="js/script.js"></script>
     </body>
 </html>
