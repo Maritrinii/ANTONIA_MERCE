@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MENU TOTAL PRICE</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Choose your food menu!</h1>
+            <p>You can add different quantities for each item</p>
+        </header>
+        <main>
+            <section id="foodMenu">
+                <form action="">
+                    <div>
+                        <label for="burger">Burger - 7.9€</label>
+                        <input
+                            type="number"
+                            name="burger"
+                            id="burger"
+                            min="0"
+                            value="0"
+                            data-price="7.9" />
+                    </div>
+                    <div>
+                        <label for="pizza">Pizza - 12.30€</label>
+                        <input
+                            type="number"
+                            name="pizza"
+                            id="pizza"
+                            min="0"
+                            value="0"
+                            data-price="12.30" />
+                    </div>
+                    <div>
+                        <label for="salad">Salad - 6€</label>
+                        <input
+                            type="number"
+                            name="salad"
+                            id="salad"
+                            min="0"
+                            value="0"
+                            data-price="6" />
+                    </div>
+                    <div>
+                        <label for="drink">Drink - 3.50€</label>
+                        <input
+                            type="number"
+                            name="drink"
+                            id="drink"
+                            min="0"
+                            value="0"
+                            data-price="3.50" />
+                    </div>
+                    <div>
+                        <label for="dessert">Dessert - 5€</label>
+                        <input
+                            type="number"
+                            name="dessert"
+                            id="dessert"
+                            min="0"
+                            value="0"
+                            data-price="5" />
+                    </div>
+                    <div class="total-price-cont">
+                        <p>Total price:</p>
+                        <p id="totalPrice"></p>
+                    </div>
+                    <input id="buyFood" type="submit" value="Buy food menu!" class="disabled" />
+                </form>
+            </section>
+        </main>
+        <footer>
+        </footer>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
