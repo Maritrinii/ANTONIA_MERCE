@@ -19,6 +19,20 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+  background-color: white;
+  color: black;
+  font-family: var(--font-futura);
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
 header {
     text-align: center;
     padding: var(--padding);
@@ -34,41 +48,111 @@ h1 {
     padding-bottom: 0.5rem;
 }
 
-h2 {
-    font-size: 3rem;
-    font-family:var(--font-futura);
-    padding-bottom: 4rem;
+/* ENTRADAS */
+/* ===== FORMULARIO ===== */
+#buyTicket {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 3rem 2rem;
+  border: 2px solid black;
+  border-radius: 2rem;
 }
 
-.img-header > img {
-    width: 100%;
-    height: auto;
-    max-width: 1300px;
-    margin: 0 auto;
-    display: block;
-    padding-bottom: 5rem;
-    align-items: center;
+#buyTicket > form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
 }
 
-.text-header {
-    font-size: 1.3rem;
-    font-family: 'Times New Roman', Times, serif;
-    padding: 0 6rem 4rem 6rem ;
+/* Cada línea de entrada */
+#buyTicket form > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.btn-header {
-    text-decoration: none;
-    font-size: 1.5rem;
-    background-color: var(--btn-color);
-    color: var(--text-color);
-    padding: 1rem 2rem;
-    border: black solid 1.5px;
-    font-family: var(--font-futura);
+label {
+  font-family: var(--font-modernoir);
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
 }
 
-.btn-header:hover {
-    transition: var(--transition);
-    background-color: var(--btn-color-hover);
+input[type="number"] {
+  width: 80px;
+  font-size: 1.3rem;
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  background-color: transparent;
+  color: white;
+  transition: var(--transition);
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--btn-color);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+  appearance: auto;
+  margin: 0;
+}
+
+input[type="number"] {
+  background-color: white; /* que contraste con las flechas */
+  color: black;
+}
+
+/* TOTAL */
+.total-price-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid white;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.total-price-cont p {
+  font-size: 1.4rem;
+  font-family: var(--font-futura);
+  color: white;
+}
+
+#totalPrice {
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: var(--btn-color);
+}
+
+/* BOTÓN COMPRAR */
+input[type="submit"] {
+  text-decoration: none;
+  font-size: 1.5rem;
+  background-color: var(--btn-color);
+  color: var(--text-color);
+  padding: 1rem 2rem;
+  border: 1.5px solid black;
+  font-family: var(--font-futura);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+input[type="submit"]:hover {
+  background-color: var(--btn-color-hover);
+}
+
+input.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* FOOTER */

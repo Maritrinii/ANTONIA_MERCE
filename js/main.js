@@ -1,15 +1,25 @@
 // MENÚ
 
-let burger = document.querySelector(".burger > i");
-let menu_opt = document.querySelector(".menu");
+// let burger = document.querySelector(".burger > i");
+// let menu_opt = document.querySelector(".menu");
 
-burger.addEventListener("click", function(){
+// burger.addEventListener("click", function(){
 
-    burger.classList.toggle("fa-bars");
-    burger.classList.toggle("fa-times");
-    menu_opt.classList.toggle("menu-show");
+//     burger.classList.toggle("fa-bars");
+//     burger.classList.toggle("fa-times");
+//     menu_opt.classList.toggle("menu-show");
 
+// });
+
+const burger = document.querySelector(".burger i");
+const nav = document.querySelector("nav");
+
+burger.addEventListener("click", () => {
+  burger.classList.toggle("fa-bars");
+  burger.classList.toggle("fa-xmark");
+  nav.classList.toggle("menu-open");
 });
+
 
 
 
@@ -98,7 +108,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-// VENTANA MODAL
 // VENTANA MODAL
 // Seleccionamos elementos
 const cards = document.querySelectorAll(".card");
