@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +8,13 @@
 :root {
     --btn-color: rgb(210, 194, 144);
     --btn-color-hover:rgb(167, 156, 119);
-    --text-color: black;
+    --black: black;
+    --white: white;
     --padding: 2rem 6rem;
+    --padding-media: 1rem 2rem;
     --font-modernoir:tt-modernoir;
     --font-futura:futura-pt-condensed;
-    --transition: all 0.3s;
+    --transition: all 0.3s ease;
     --fondo-trans: rgba(0, 0, 0, 0.7);
 }
 
@@ -19,12 +22,30 @@ html {
     scroll-behavior: smooth;
 }
 
+/* CLASE BTN (BOTONES) */
+.btn {
+    text-decoration: none;
+    font-size: 1.5rem;
+    background-color: var(--btn-color);
+    color: var(--text-color);
+    padding: var(--padding-media);
+    border: black solid 1.5px;
+    font-family: var(--font-futura);
+    transition: var(--transition);
+
+}
+
+.btn:hover {
+    transition: var(--transition);
+    background-color: var(--btn-color-hover);
+}
+
 /* NAVBAR */
 nav {
     width: 100%;
     height: 70px;
-    background-color: black;
-    color: white;
+    background-color: var(--black);
+    color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,119 +54,69 @@ nav {
     left: 0;
     z-index: 999;
     box-sizing: border-box;
-  }
-  
-  .menu-container {
+}
+ 
+.menu-container {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
-  }
+}
   
-  .logo-menu img {
+.logo-menu img {
     height: 45px;
     width: auto;
     object-fit: contain;
-  }
+}
   
-  /* --- MENÚS --- */
-  .menu {
+/* MENÚ */
+.menu {
     list-style: none;
     display: flex;
     gap: 2rem;
     margin: 0;
     padding: 0;
-  }
+}
   
-  .menu a {
-    color: white;
+.menu a {
+    color: var(--white);
     text-decoration: none;
     font-family: var(--font-futura);
     font-size: 1.2rem;
     transition: color 0.3s;
-  }
+}
   
-  .menu a:hover {
+.menu a:hover {
     color: var(--btn-color-hover);
-  }
+}
   
-  /* --- BURGER --- */
+/* --- BURGER --- */
   .burger {
     font-size: 2rem;
-    color: white;
+    color: var(--white);
     display: none;
     cursor: pointer;
-  }
-
-/* nav > .menu {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
 }
 
-.menu-left, .menu-right {
-    display: flex;
-    justify-content: space-around;
-    gap: 2rem;
-}
-
-.menu-left {
-    padding-left: 5rem;
-}
-
-.menu-right {
-    padding-right: 5rem;
-}
-
-.menulink {
-    color: rgb(255, 255, 255);
-    list-style: none;
-    margin: 0;
-    font-family: var(--font-futura);
-}
-
-.menulink > a {
-    text-decoration: none;
+nav .menu a[href="#entradas"].btn {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--white);
     font-size: 1.2rem;
-    transition: var(--transition);
-    color: rgb(255, 255, 255);
 }
-
-.menulink:hover > a {
-    color: white;
+  
+nav .menu a[href="#entradas"].btn:hover {
+    color: var(--btn-color-hover);
+    background: none;
 }
-
-.logo-menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    flex: 0 0 auto;
-}
-
-.logo-menu img {
-    max-height: 45px;
-    width: auto;
-    display: block;
-    object-fit: contain;
-} */
-
-/* .burger {
-    cursor: pointer;
-    font-size: 2rem;
-    display: none;
-} */
-
-
 
 /* HEADER */
 header {
     text-align: center;
-    padding: var(--padding);
+    padding: 7rem 11rem;
     background-color: antiquewhite;
-    padding-bottom: 5rem;
-    padding-top: 5rem;
     scroll-margin-top: 70px;
 }
 
@@ -178,22 +149,6 @@ h2 {
     padding: 0 6rem 4rem 6rem ;
 }
 
-.btn-header {
-    text-decoration: none;
-    font-size: 1.5rem;
-    background-color: var(--btn-color);
-    color: var(--text-color);
-    padding: 1rem 2rem;
-    border: black solid 1.5px;
-    font-family: var(--font-futura);
-}
-
-.btn-header:hover {
-    transition: var(--transition);
-    background-color: var(--btn-color-hover);
-}
-
-
 /* ENTRADAS */
 #entradas, #program {
     padding: var(--padding);
@@ -204,7 +159,7 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 8px double white;
+    border: 8px double var(--white);
     justify-content: flex-start;
 }
 
@@ -212,6 +167,7 @@ h3, .cards-entradas, .btn-entradas {
     position: relative;
     z-index: 1;
 }
+
 .cards-entradas {
     display: flex;
     justify-content: center;
@@ -221,10 +177,10 @@ h3, .cards-entradas, .btn-entradas {
 }
 
 .card {
-    border: white solid 1.5px;
-    outline: 6px double white;
+    border: var(--white) solid 1.5px;
+    outline: var(--white) 6px double;
     outline-offset: 4px;
-    background-image: url("../img/old_noise_video.mp4");
+    /* background-image: url("../img/old_noise_video.mp4"); */
     padding: 1.5rem;
     width: 300px;
     height: 450px;
@@ -236,8 +192,9 @@ h3, .cards-entradas, .btn-entradas {
     text-align: center;
     position: relative;
     overflow: hidden; 
-    transition: all 0.3s ease;
-    
+    transition: var(--transition);
+    z-index: 2;
+    cursor: pointer;
 }
 
 .card:hover {
@@ -245,25 +202,15 @@ h3, .cards-entradas, .btn-entradas {
     outline-color: var(--btn-color-hover);   
 }
 
-.card .titulo-entr,
-.card .price {
-    transition: color 0.3s ease;
-}
-
-.card:hover > .titulo-entr,
-.card:hover > .price {
-    color: red
-}
-
-
-#entradas > h3 {
+#entradas > h3,
+#program > h3 {
     font-size: 6rem;
     padding: 1rem;
 }
 
 h3 {
     font-family: var(--font-modernoir);
-    color: white;
+    color: var(--white);
 }
 
 .entradas-abajo {
@@ -274,47 +221,26 @@ h3 {
     align-items: center;
     width: 100%;
     padding-bottom: 4rem;
-
 }
 
 .titulo-entr {
     font-family: var(--font-modernoir);
     font-size: 2.6rem;
     padding-bottom: 1.2rem;
-    color: white;
-    
+    color: var(--white);  
 }
-
 
 .price {
     font-family: var(--font-futura);
     font-size: 3.5rem;
     padding: 0;
-    color: white;
-
+    color: var(--white);
 }
 
 .cont-card {
     position: relative;
     z-index: 1;
-    color: white;
-}
-
-
-.btn-entradas {
-    text-decoration: none;
-    font-size: 1.5rem;
-    background-color: var(--btn-color);
-    color: var(--text-color);
-    padding: 1rem 2rem;
-    border: black solid 1.5px;
-    transition: all 0.3s ease;
-    font-family: var(--font-futura);
-}
-
-.btn-entradas:hover {
-    transition: var(--transition);
-    background-color: var(--btn-color-hover);
+    color: var(--white);
 }
 
 .video-entradas {
@@ -325,8 +251,8 @@ h3 {
     height: 100%;
     object-fit: cover;
     z-index: 0;
+    pointer-events: none;
 }
-
 
 /* VENTANA MODAL */
 #modalWindow {
@@ -349,7 +275,7 @@ h3 {
 
 #modalWindow > .modal-content {
     color: white;
-    background-color: var(--text-color);
+    background-color: var(--black);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -405,13 +331,11 @@ h3 {
     background-color: var(--btn-color-hover);
 }
 
-
 #modalWindow .close {
     align-self: flex-end;
     font-size: 2rem;
     cursor: pointer;
 }
-
 
 
 /* PROGRAMACIÓN */
@@ -420,21 +344,20 @@ h3 {
     top: 0;
     z-index: 10;
 }
+
 #program {
     position: relative;
 }
 
 #program > h3 {
-    font-size: 6rem;
     font-style: var(--font-modernoir);
-    padding: 1rem;
     padding-bottom: 4rem;
 }
 
 .program-cont {
     width: 100%;
     position: relative;
-    height: 200vh; /* suficiente altura para scroll */
+    height: 200vh;
 }
 
 .prom-card {
@@ -442,7 +365,7 @@ h3 {
   top: 0;
   max-width: 1000px;
   width: 100%;
-  min-height: 50vh; /* altura de cada tarjeta */
+  min-height: 50vh;
   margin: 0 auto 2rem;
   padding: 3rem;
   display: flex;
@@ -450,11 +373,10 @@ h3 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: azure;
-  color: black;
-  border: 8px double black;
+  background-color: antiquewhite;
+  color: var(--black);
+  border: 8px double var(--black);
 
-  /* animación simple al cargar */
   transform: translateY(50px);
   opacity: 0;
   animation: reveal-card 1s ease-out forwards;
@@ -481,7 +403,6 @@ h3 {
     font-family: var(--font-futura);
 }
 
-
 /* VÍDEO/CITA */
 #video {
     position: relative;
@@ -492,7 +413,7 @@ h3 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
+    color: var(--white);
     background-color: var(--fondo-trans);
 
 }
@@ -515,26 +436,6 @@ h3 {
     font-size: 2rem;
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
-
-    color: transparent;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  -webkit-background-clip: text;
-  background-image: linear-gradient(90deg, white, white);
-  background-size: 0% 100%;
-  background-repeat: no-repeat;
-  /* solo si la API funciona */
-  animation: scroll-reveal forwards;
-  animation-timeline: view();
-  animation-range-start: cover 20vh;
-  animation-range-end: cover 30vh;
-}
-
-
-@keyframes scroll-reveal {
-    to {
-        background-size: 100% 100%;
-    }
 }
 
 /* FORMULARIO */
@@ -547,7 +448,7 @@ h3 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
+    color: var(--white);
     background-color: var(--fondo-trans);
 }
 
@@ -565,27 +466,26 @@ h3 {
     padding: 2rem 3rem;
     border-radius: 8px;
     text-align: center;
-    backdrop-filter: blur(4px);
-  }
+}
   
-  .cont-formulario > h3 {
+.cont-formulario > h3 {
     font-family: var(--font-modernoir);
     font-size: 6rem;
     padding-bottom: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-  }
+}
   
-  .cont-formulario > p {
+.cont-formulario > p {
     font-size: 1.3rem;
     font-family: 'Times New Roman', Times, serif;
-    color: white;
+    color: var(--white);
     margin-bottom: 2rem;
-  }
+}
 
-  .formulario-news {
-    background-color: white;
-    color: black;
+.formulario-news {
+    background-color: var(--white);
+    color: var(--black);
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -593,50 +493,43 @@ h3 {
     width: 500px;
     margin: 0 auto;
     text-align: left;
-  }
+}
   
-  .formulario-news > label {
+.formulario-news > label {
     font-size: 1.5rem;
     font-family: var(--font-futura);
-  }
+}
   
-  .formulario-news > input {
+.formulario-news > input {
     width: 100%;
-    padding: 8px;
+    padding: 0.5rem;
     border: 1px solid #999;
-    border-radius: 2px;
     outline: none;
     font-size: 1rem;
-  }
+}
   
-  
-  .formulario-news button {
+.formulario-news button {
     background-color: var(--btn-color);
-    color: var(--text-color);
+    color: var(--black);
     border: none;
-    padding: 1rem 2rem;
+    padding: var(--padding-media);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     font-family: var(--font-futura);
-    border: black solid 1.5px;
+    border: var(--black) solid 1.5px;
     font-size: 1.5rem;
     width: auto;
     align-self: center;
-
-  }
-
-  
-  .formulario-news button:hover {
+}
+ 
+.formulario-news button:hover {
     background-color: var(--btn-color-hover);
-  }
-
-
-
+}
 
 /* FOOTER */
 #footer {
-  background-color: black;
-  color: white;
+  background-color: var(--black);
+  color: var(--white);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -656,8 +549,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  transition: all 0.3s ease;
-
+  transition: var(--transition);
 }
 
 .footer-right > p {
@@ -680,9 +572,9 @@ h3 {
 }
 
 .social > a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .social > i {
@@ -715,7 +607,6 @@ h3 {
   opacity: 0.7;
   color: var(--btn-color-hover);
   text-decoration-color: var(--btn-color-hover);
-
 }
 
 .copyright {
@@ -729,62 +620,80 @@ h3 {
 /* MEDIA QUERIES */
 @media screen and (max-width: 678px) {
 
-/* MENÚ */
-  .menu-left,
-  .menu-right {
-    display: none;
-  }
+    /* CLASE BTN (BOTONES) */
+    .btn {
+        text-decoration: none;
+        font-size: 1.2rem;
+        background-color: var(--btn-color);
+        color: var(--black);
+        padding: 0.5rem 1rem;
+        border: var(--black) solid 1.5px;
+        font-family: var(--font-futura);
+    }
 
-  .burger {
-    display: block;
-  }
+    /* MENÚ */
+    .menu-left,
+    .menu-right {
+        display: none;
+    }
 
-  .menu-container {
-    justify-content: space-between;
-  }
+    .burger {
+        display: block;
+    }
 
+    .menu-container {
+        justify-content: space-between;
+    }
 
-  nav.menu-open .menu-container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 70px;
-    background-color: rgba(0, 0, 0, 0.95);
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
+    nav.menu-open .menu-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 70px;
+        background-color: rgba(0, 0, 0, 0.95);
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
 
-  nav.menu-open .menu-left,
-  nav.menu-open .menu-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
+    nav.menu-open .menu-left,
+    nav.menu-open .menu-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
 
-  .logo-menu {
-    position: absolute;
-    top: 15px;
-    left: 20px;
-  }
+    .logo-menu {
+        position: absolute;
+        top: 15px;
+        left: 20px;
+    }
 
-  .burger {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    z-index: 1001;
-  }
+    .burger {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 1001;
+    }
 
-  nav.menu-open .logo-menu {
-    display: block;
-  }
+    nav.menu-open .logo-menu {
+        display: block;
+    }
 
-  nav.menu-open .menu a {
-    font-size: 2rem;
-  }
+    nav.menu-open .menu a {
+        font-size: 2rem;
+    }
+
+    nav .menu a[href="#entradas"].btn {
+        display: block !important;
+        width: 100%;
+        text-align: center;
+        font-size: 2rem !important;
+        padding: 1rem 0 !important;
+      }
 
     /* HEADER */
     header {
@@ -811,25 +720,19 @@ h3 {
         padding: 0;
         padding-bottom: 2rem;
         font-size: 1.3rem;
-
     }
-
-    .btn-header {
-        text-decoration: none;
-        font-size: 1.2rem;
-        background-color: var(--btn-color);
-        color: var(--text-color);
-        padding: 0.5rem 1rem;
-        border: black solid 1.5px;
-        font-family: var(--font-futura);
-    }
-
 
     /* ENTRADA */
-    #entradas {padding: 1rem 2rem;}
+    #entradas {
+        padding: var(--padding-media) ;
+    }
     
     #entradas > h3 {
         font-size: 3rem;
+    }
+
+    #entradas > h3,
+    #formulario > .cont-formulario > h3 {
         padding-bottom: 2rem;
     }
 
@@ -844,18 +747,12 @@ h3 {
         height: 250px;
     }
 
-    .titulo-entr {font-size: 2rem;}
+    .titulo-entr {
+        font-size: 2rem;
+    }
 
-    .price {font-size: 2.75rem;}
-
-    .btn-entradas {
-        text-decoration: none;
-        font-size: 1.2rem;
-        background-color: var(--btn-color);
-        color: var(--text-color);
-        padding: 0.5rem 1rem;
-        border: black solid 1.5px;
-        font-family: var(--font-futura);
+    .price {
+        font-size: 2.75rem;
     }
     
     /* VENTANA MODAL */
@@ -888,18 +785,22 @@ h3 {
     }
 
     /* PROGRAMACIÓN */
-    #program { padding: 3rem 2rem;}
-    #program > h3 {font-size: 3rem;}
-    .prom-card > .prom-title { font-size: 3rem; }
+    #program {
+        padding: 3rem 2rem;
+    }
+
+    #program > h3,
+    #formulario > .cont-formulario > h3 {
+        font-size: 3rem;
+    }
+
+    .prom-card > .prom-title {
+        font-size: 2rem !important;  
+    }
 
     /* FORMULARIO */
     #formulario {
-        padding: 1rem 2rem;
-    }
-    
-    #formulario > .cont-formulario > h3 {
-        font-size: 3rem;
-        padding-bottom: 2rem;
+        padding: var(--padding-media);
     }
 
     .cont-formulario {
@@ -914,18 +815,17 @@ h3 {
     .formulario-news {
         width: 100%;
         padding: 1rem;
-      }
+    }
 
     .formulario-news > button  {
         text-decoration: none;
         font-size: 1.2rem;
         background-color: var(--btn-color);
-        color: var(--text-color);
+        color: var(--black);
         padding: 0.5rem 1rem;
-        border: black solid 1.5px;
+        border: var(--black) solid 1.5px;
         font-family: var(--font-futura);
     }
-
 
     /* FOOTER */
     #footer {
@@ -939,20 +839,21 @@ h3 {
         margin-bottom: 3rem;
     }
     
-      .footer-right {
+    .footer-right {
         align-items: center;
         margin-top: 20px;
-      }
+    }
 
-      .footer-right > p {
+    .footer-right > p {
         font-size: 1.8rem;
-      }
+    }
     
-      .politics {
+    .politics {
         flex-direction: column;
         gap: 2rem;
-      }
-      .social i {
+    }
+
+    .social i {
         font-size: 2rem;
-      }
+    }
 }
