@@ -425,44 +425,50 @@ h3 {
 }
 
 #program > h3 {
-    font-size: 3rem;
+    font-size: 6rem;
     font-style: var(--font-modernoir);
     padding: 1rem;
+    padding-bottom: 4rem;
 }
 
 .program-cont {
     width: 100%;
     position: relative;
-    /* height: 500px;
-    overflow-y: auto; */
+    height: 200vh; /* suficiente altura para scroll */
 }
 
 .prom-card {
-    position: sticky;
-    top: 0;
-    max-width: 1000px;
-    width: 100%;
-    min-height: 500px;
-    margin: 0 auto;
-    border: 1px solid red;
-    background-color: azure;
-    color: black;
-    padding: 3rem;
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transform: translateY(50px);
+  position: sticky;
+  top: 0;
+  max-width: 1000px;
+  width: 100%;
+  min-height: 50vh; /* altura de cada tarjeta */
+  margin: 0 auto 2rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: azure;
+  color: black;
+  border: 8px double black;
+
+  /* animación simple al cargar */
+  transform: translateY(50px);
+  opacity: 0;
+  animation: reveal-card 1s ease-out forwards;
 }
 
-.prom-card:nth-child(2){
-    top: 20px;
-}
+.prom-card:nth-child(1) { animation-delay: 0.2s; }
+.prom-card:nth-child(2) { animation-delay: 0.5s; }
+.prom-card:nth-child(3) { animation-delay: 0.8s; }
 
-.prom-card:nth-child(3){
-    top: 40px;
+@keyframes reveal-card {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 #program > .program-cont > .prom-card > .prom-title {
@@ -480,7 +486,7 @@ h3 {
 #video {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 150vh;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -510,6 +516,25 @@ h3 {
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
 
+    color: transparent;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(90deg, white, white);
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  /* solo si la API funciona */
+  animation: scroll-reveal forwards;
+  animation-timeline: view();
+  animation-range-start: cover 20vh;
+  animation-range-end: cover 30vh;
+}
+
+
+@keyframes scroll-reveal {
+    to {
+        background-size: 100% 100%;
+    }
 }
 
 /* FORMULARIO */
@@ -801,9 +826,7 @@ h3 {
 
 
     /* ENTRADA */
-    #entradas {
-        padding: 1rem 2rem;
-    }
+    #entradas {padding: 1rem 2rem;}
     
     #entradas > h3 {
         font-size: 3rem;
@@ -819,16 +842,11 @@ h3 {
     .card {
         width: 150px;
         height: 250px;
-
     }
 
-    .titulo-entr {
-        font-size: 2rem; 
-    }
+    .titulo-entr {font-size: 2rem;}
 
-    .price {
-        font-size: 2.75rem;
-    }
+    .price {font-size: 2.75rem;}
 
     .btn-entradas {
         text-decoration: none;
@@ -868,6 +886,11 @@ h3 {
     .text-video {
         font-size: 1.5rem;
     }
+
+    /* PROGRAMACIÓN */
+    #program { padding: 3rem 2rem;}
+    #program > h3 {font-size: 3rem;}
+    .prom-card > .prom-title { font-size: 3rem; }
 
     /* FORMULARIO */
     #formulario {
