@@ -415,62 +415,66 @@ h3 {
 
 
 /* PROGRAMACIÓN */
+#program > nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+#program {
+    position: relative;
+}
+
 #program > h3 {
     font-size: 3rem;
     font-style: var(--font-modernoir);
     padding: 1rem;
 }
 
-.cards-program {
+.program-cont {
+    width: 100%;
+    position: relative;
+    /* height: 500px;
+    overflow-y: auto; */
+}
+
+.prom-card {
+    position: sticky;
+    top: 0;
+    max-width: 1000px;
+    width: 100%;
+    min-height: 500px;
+    margin: 0 auto;
+    border: 1px solid red;
+    background-color: azure;
+    color: black;
+    padding: 3rem;
+    margin-bottom: 2rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 5rem;
-    flex-wrap: wrap;
-    padding-bottom: 4rem;
-}
-
-.card-prom {
-    border: black solid 1.5px;
-    padding: 1.5rem;
-    width: 200px;
+    align-items: center;
     text-align: center;
-    
+    transform: translateY(50px);
 }
 
-#program > h3 {
-    font-size: 3rem;
-    font-style: var(--font-modernoir);
-    padding: 1rem;
+.prom-card:nth-child(2){
+    top: 20px;
 }
 
-.titulo-prom {
-    font-family: var(--font-futura);
-    font-size: 1.5rem;
+.prom-card:nth-child(3){
+    top: 40px;
 }
 
-.fecha {
-    padding-bottom: 5rem;
+#program > .program-cont > .prom-card > .prom-title {
+    font-size: 4rem;
+    font-family: var(--font-modernoir);
 }
 
-.dia {
+#program > .program-cont > .prom-card > .date {
     font-size: 2rem;
-}
-
-.btn-programa {
-    text-decoration: none;
-    font-size: 1.5rem;
-    background-color: var(--btn-color);
-    color: var(--text-color);
-    padding: 1rem 2rem;
-    border: black solid 1.5px;
-    transition: all 0.3s ease;
     font-family: var(--font-futura);
 }
 
-.btn-programa:hover {
-    transition: var(--transition);
-    background-color: var(--btn-color-hover);
-}
 
 /* VÍDEO/CITA */
 #video {
@@ -700,8 +704,7 @@ h3 {
 /* MEDIA QUERIES */
 @media screen and (max-width: 678px) {
 
-    /* MENÚ */
-
+/* MENÚ */
   .menu-left,
   .menu-right {
     display: none;
@@ -737,7 +740,6 @@ h3 {
     margin-top: 2rem;
   }
 
-
   .logo-menu {
     position: absolute;
     top: 15px;
@@ -751,53 +753,13 @@ h3 {
     z-index: 1001;
   }
 
-
   nav.menu-open .logo-menu {
     display: block;
   }
 
-
   nav.menu-open .menu a {
     font-size: 2rem;
   }
-      
-
-
-    /* .burger {
-        display: block;
-        padding-right: 1rem;
-        color: white;
-    }
-
-    .menu {
-        margin: 0;
-        background: rgb(146, 146, 146);
-        position: fixed;
-        right: -100%;
-        top: 70px;
-        width: 100%;
-        height: calc(100% - 70px);
-        flex-direction: column;
-        justify-content: space-around;
-        padding: 0;
-        z-index: 1;
-        transition: all 0.33s;
-    }
-
-    .menulink {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .logo-menu img {
-        padding-left: 1rem;
-    }
-
-    .menu-show {
-        right: 0;
-    } */
-
-  
 
     /* HEADER */
     header {

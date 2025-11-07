@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Comprar entradas</title>
@@ -9,15 +9,22 @@
     <link rel="icon" href="img/favicon.png" type="image/png">
 
     <!-- ENLACE TIPOGRAFÍA -->
-  <link rel="stylesheet" href="https://use.typekit.net/ixf8kss.css">
-  <link rel="stylesheet" href="https://use.typekit.net/ixf8kss.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ixf8kss.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ixf8kss.css">
 
-  <!-- EMOJIS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-</head>
+    <!-- EMOJIS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  </head>
+
   <body>
+    
+    
       <header>
+        <div class="cabecera">
+          <a href="index.html" class="back-arrow">&#8592; Volver</a>
+          
           <h1>COMPRA TUS ENTRADAS</h1>
+        </div>
       </header>
       <main>
           <section id="buyTicket">
@@ -65,9 +72,17 @@
                       <p>Precio total:</p>
                       <p id="totalPrice"></p>
                   </div>
-                  <input id="buyFood" type="submit" value="COMPRAR" class="disabled" />
+                  <input id="buyFood" type="submit" value="COMPRA ENTRADAS" class="disabled" />
               </form>
           </section>
+
+          <!-- VENTANA MODAL PAGO -->
+          <div id="paymentModal" class="modal">
+            <div class="modal-content">
+              <span class="closeModal">&times;</span>
+              <h2>¡Pago realizado con éxito!</h2>
+            </div>
+          </div>
       </main>
 
       <!-- FOOTER -->
@@ -107,6 +122,6 @@
       </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

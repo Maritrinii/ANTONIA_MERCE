@@ -26,24 +26,38 @@ body {
 }
 
 main {
-  min-height: 100vh;
+  min-height: auto;
+  padding: 5rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
 }
 
+/* FLECHA */
+.back-arrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-family: var(--font-futura);
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.back-arrow:hover {
+  color: var(--btn-color-hover);
+}
+
+
 header {
     text-align: center;
     padding: var(--padding);
-    padding-bottom: 5rem;
-    padding-top: 5rem;
-    scroll-margin-top: 70px;
 }
 
 
 h1 {
-    font-size: 8rem;
+    font-size: 5rem;
     font-family: var(--font-modernoir);
     padding-bottom: 0.5rem;
 }
@@ -58,7 +72,6 @@ h1 {
   background-color: white;
   padding: 3rem 2rem;
   border: 2px solid black;
-  border-radius: 2rem;
 }
 
 #buyTicket > form {
@@ -102,20 +115,29 @@ input[type="number"] {
   color: black;
 }
 
-/* OCULTAR FLECHAS */
-/* Para Chrome, Safari, Edge */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+/* Quitar flechas en Chrome, Safari y Edge */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
     margin: 0;
 }
 
-/* Opcional: estilos del input */
-input[type="number"] {
-    width: 80px;
-    text-align: center;
-    font-size: 1.3rem;
+.total-price-cont p:first-child {
+  color: black;
+  font-weight: normal; /* opcional */
 }
+
+
+#totalPrice {
+  color: black !important;
+}
+
+
+
+
+
+
+
 
 
 /* BOTONES + & - */
@@ -150,6 +172,108 @@ button.decrease:hover {
   background-color: var(--btn-color-hover);
 }
 
+
+/* VENTANA MODAL PAGO */
+/* VENTANA MODAL PAGO ESTILO #modalWindow */
+#paymentModal {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--fondo-trans);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  justify-content: center;
+  align-items: center;
+}
+
+#paymentModal.show-modal {
+  display: flex;
+  opacity: 1;
+}
+
+#paymentModal > .modal-content {
+  color: white;
+  background-color: var(--text-color); /* blanco si var(--text-color)=white */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  border: 2px solid white;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  width: 600px;
+  max-width: 90vw;
+  box-sizing: border-box;
+}
+
+#paymentModal > .modal-content > h2 {
+  padding-bottom: 2rem;
+  font-family: var(--font-modernoir);
+  font-size: 2rem;
+}
+
+#paymentModal .closeModal {
+  align-self: flex-end;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#paymentModal.show-modal .modal-content button {
+  text-decoration: none;
+  font-size: 1.5rem;
+  background-color: var(--btn-color);
+  color: var(--text-color);
+  padding: 1rem 2rem;
+  border: black solid 1.5px;
+  font-family: var(--font-futura);
+  cursor: pointer;
+}
+
+#paymentModal.show-modal .modal-content button:hover {
+  transition: var(--transition);
+  background-color: var(--btn-color-hover);
+}
+
+/* .modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  text-align: center;
+  font-family: var(--font-futura);
+  font-size: 2rem;
+  position: relative;
+}
+
+.closeModal {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+} */
 
 
 /* TOTAL */
@@ -292,45 +416,29 @@ input.disabled {
   /* MEDIA QUERIES */
   @media screen and (max-width: 678px) {
   
-      /* HEADER */
-      header {
-          padding: 5rem 2rem;
-      }
+    /* HEADER */
+    header {
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 3.3rem;
+      font-family: var(--font-modernoir);
+      padding-bottom: 0.5rem;
+    }
+
+    .text-header {
+      padding: 0;
+      padding-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    /* COMPRAR */
+    main {
+      padding: 1rem;
+    }
   
-      h1 {
-          font-size: 3.3rem;
-          font-family: var(--font-modernoir);
-          padding-bottom: 0.5rem;
-      }
-      
-      h2 {
-          font-size: 1.5rem;
-          font-family:var(--font-futura);
-          padding-bottom: 1rem;
-      }
-  
-      .img-header > img {
-          padding-bottom: 2rem;
-      }
-  
-      .text-header {
-          padding: 0;
-          padding-bottom: 2rem;
-          font-size: 1rem;
-  
-      }
-  
-      .btn-header {
-          text-decoration: none;
-          font-size: 1.2rem;
-          background-color: var(--btn-color);
-          color: var(--text-color);
-          padding: 0.5rem 1rem;
-          border: black solid 1.5px;
-          font-family: var(--font-futura);
-      }
-  
-      /* FOOTER */
+    /* FOOTER */
     #footer {
       flex-direction: column;
       align-items: center;
@@ -338,9 +446,9 @@ input.disabled {
       text-align: center;
     }
   
-  #footer > div {
+    #footer > div {
       margin-bottom: 3rem;
-  }
+    }
   
     .footer-right {
       align-items: center;
