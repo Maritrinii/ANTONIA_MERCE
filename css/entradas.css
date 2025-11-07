@@ -49,7 +49,6 @@ h1 {
 }
 
 /* ENTRADAS */
-/* ===== FORMULARIO ===== */
 #buyTicket {
   width: 100%;
   max-width: 600px;
@@ -69,7 +68,6 @@ h1 {
   width: 100%;
 }
 
-/* Cada línea de entrada */
 #buyTicket form > div {
   display: flex;
   justify-content: space-between;
@@ -99,6 +97,28 @@ input[type="number"]:focus {
   border-color: var(--btn-color);
 }
 
+input[type="number"] {
+  background-color: white;
+  color: black;
+}
+
+/* OCULTAR FLECHAS */
+/* Para Chrome, Safari, Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Opcional: estilos del input */
+input[type="number"] {
+    width: 80px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+
+/* BOTONES + & - */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   opacity: 1;
@@ -106,10 +126,31 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-input[type="number"] {
-  background-color: white; /* que contraste con las flechas */
-  color: black;
+#buyTicket form > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
 }
+
+button.increase,
+button.decrease {
+  background-color: var(--btn-color);
+  border: 1px solid black;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button.increase:hover,
+button.decrease:hover {
+  background-color: var(--btn-color-hover);
+}
+
+
 
 /* TOTAL */
 .total-price-cont {
@@ -157,94 +198,94 @@ input.disabled {
 
 /* FOOTER */
 #footer {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: var(--padding);
+  font-family: var(--font-futura);
+  position: relative;
+}
+
+.footer-left > img {
+  width: 220px;
+  max-width: 100%;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  transition: all 0.3s ease;
+
+}
+
+.footer-right > p {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.footer-right > p:hover {
+    font-style: italic;
+    color: var(--btn-color-hover);
+}
+
+.social {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    padding: var(--padding);
-    font-family: var(--font-futura);
-    position: relative;
-  }
-  
-  .footer-left > img {
-    width: 220px;
-    max-width: 100%;
-  }
-  
-  .footer-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    transition: all 0.3s ease;
-  
-  }
-  
-  .footer-right > p {
-    font-size: 2.5rem;
-    margin: 0;
-  }
-  
-  .footer-right > p:hover {
-      font-style: italic;
-      color: var(--btn-color-hover);
-  }
-  
-  .social {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      gap: 25px;
-      width: 200px;
-      font-size: 1.5rem;
-  }
-  
-  .social > a {
-      color: white;
-      text-decoration: none;
-      transition: all 0.3s ease;
-  }
-  
-  .social > i {
-    cursor: pointer;
-  }
-  
-  .social > a:hover > i {
-      color: var(--btn-color-hover);
-      transform: scale(1.2);
-  }
-  
-  .politics {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    font-size: 1.2rem;
-    margin-top: 40px;
-    text-transform: uppercase;
-    padding-bottom: 4rem;
-  }
-  
-  .politics > p {
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-    text-decoration: underline;
-  }
-  
-  .politics p:hover {
-    opacity: 0.7;
-    color: var(--btn-color-hover);
-    text-decoration-color: var(--btn-color-hover);
-  
-  }
-  
-  .copyright {
-    width: 100%;
-    text-align: center;
+    gap: 25px;
+    width: 200px;
     font-size: 1.5rem;
-  }
+}
+
+.social > a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social > i {
+  cursor: pointer;
+}
+
+.social > a:hover > i {
+    color: var(--btn-color-hover);
+    transform: scale(1.2);
+}
+
+.politics {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  font-size: 1.2rem;
+  margin-top: 40px;
+  text-transform: uppercase;
+  padding-bottom: 4rem;
+}
+
+.politics > p {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  text-decoration: underline;
+}
+
+.politics p:hover {
+  opacity: 0.7;
+  color: var(--btn-color-hover);
+  text-decoration-color: var(--btn-color-hover);
+
+}
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+}
   
   
   
@@ -290,20 +331,31 @@ input.disabled {
       }
   
       /* FOOTER */
-      #footer {
-          flex-direction: column;
-          align-items: center;
-          padding: 30px;
-          text-align: center;
-        }
-      
-        .footer-right {
-          align-items: center;
-          margin-top: 20px;
-        }
-      
-        .politics {
-          flex-direction: column;
-          gap: 10px;
-        }
+    #footer {
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+      text-align: center;
+    }
+  
+  #footer > div {
+      margin-bottom: 3rem;
+  }
+  
+    .footer-right {
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .footer-right > p {
+      font-size: 1.8rem;
+    }
+  
+    .politics {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .social i {
+      font-size: 2rem;
+    }
   }

@@ -701,7 +701,7 @@ h3 {
 @media screen and (max-width: 678px) {
 
     /* MENÚ */
-    /* Ocultar menús por defecto */
+
   .menu-left,
   .menu-right {
     display: none;
@@ -715,7 +715,7 @@ h3 {
     justify-content: space-between;
   }
 
-  /* Menú desplegable */
+
   nav.menu-open .menu-container {
     flex-direction: column;
     align-items: center;
@@ -737,14 +737,13 @@ h3 {
     margin-top: 2rem;
   }
 
-  /* Logo permanece arriba */
+
   .logo-menu {
     position: absolute;
     top: 15px;
     left: 20px;
   }
 
-  /* Burger a la derecha siempre */
   .burger {
     position: absolute;
     top: 15px;
@@ -752,12 +751,12 @@ h3 {
     z-index: 1001;
   }
 
-  /* En menú abierto no ocultamos el logo */
+
   nav.menu-open .logo-menu {
     display: block;
   }
 
-  /* Enlaces más grandes en menú abierto */
+
   nav.menu-open .menu a {
     font-size: 2rem;
   }
@@ -824,7 +823,7 @@ h3 {
     .text-header {
         padding: 0;
         padding-bottom: 2rem;
-        font-size: 1rem;
+        font-size: 1.3rem;
 
     }
 
@@ -837,8 +836,9 @@ h3 {
         border: black solid 1.5px;
         font-family: var(--font-futura);
     }
-    /* ENTRADA */
 
+
+    /* ENTRADA */
     #entradas {
         padding: 1rem 2rem;
     }

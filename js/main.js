@@ -71,8 +71,32 @@ document.addEventListener("DOMContentLoaded", function () {
     // La primera llamada a la función hará el calculo inicial para poner 0.00 €
     calculateTotalPrice();
 
+    // BOTONES + -
+    // Botón +
+document.querySelectorAll('.increase').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const input = btn.closest('div').querySelector('input[type="number"]');
+      input.value = parseInt(input.value) + 1;
+      calculateTotalPrice();
+    });
+  });
+  
+  // Botón -
+  document.querySelectorAll('.decrease').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const input = btn.closest('div').querySelector('input[type="number"]');
+      if (parseInt(input.value) > 0) input.value = parseInt(input.value) - 1;
+      calculateTotalPrice();
+    });
+  });
+  
+      
+  
+
+
+
     // Evitar el envio del formulario si el usuario pulsa enter o el precio es 0
-    document.getElementById("form").addEventListener("submit", function (event) {
+    document.getElementById("ticketForm").addEventListener("submit", function (event) {
         event.preventDefault();
     });
 });

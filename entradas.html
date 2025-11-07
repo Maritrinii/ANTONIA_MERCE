@@ -1,101 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Comprar entradas</title>
-        <link rel="stylesheet" href="css/entradas.css" />
-        <!-- ENLACE TIPOGRAFÍA -->
-      <link rel="stylesheet" href="https://use.typekit.net/ixf8kss.css">
-      <link rel="stylesheet" href="https://use.typekit.net/ixf8kss.css">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comprar entradas</title>
+    <link rel="stylesheet" href="css/entradas.css" />
+    
+    <link rel="icon" href="img/favicon.png" type="image/png">
 
-      <!-- EMOJIS -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    </head>
-    <body>
-        <header>
-            <h1>COMPRA TUS ENTRADAS</h1>
-        </header>
-        <main>
-            <section id="buyTicket">
-                <form action="">
-                    <div>
-                        <label for="normal">Entrada normal - 30€</label>
-                        <input
-                            type="number"
-                            name="normal"
-                            id="normal"
-                            min="0"
-                            value="0"
-                            data-price="30" />
-                    </div>
-                    <div>
-                        <label for="reducida">Entrada reducida - 20€</label>
-                        <input
-                            type="number"
-                            name="reducida"
-                            id="reducida"
-                            min="0"
-                            value="0"
-                            data-price="20" />
-                    </div>
-                    <div>
-                        <label for="vip">Entrada VIP - 40€</label>
-                        <input
-                            type="number"
-                            name="vip"
-                            id="vip"
-                            min="0"
-                            value="0"
-                            data-price="40" />
-                    </div>
-                    
-                    <div class="total-price-cont">
-                        <p>Precio total:</p>
-                        <p id="totalPrice"></p>
-                    </div>
-                    <input id="buyFood" type="submit" value="COMPRAR" class="disabled" />
-                </form>
-            </section>
-        </main>
+    <!-- ENLACE TIPOGRAFÍA -->
+  <link rel="stylesheet" href="https://use.typekit.net/ixf8kss.css">
+  <link rel="stylesheet" href="https://use.typekit.net/ixf8kss.css">
 
-        <!-- FOOTER -->
-     <footer id="footer">
-      <div class="footer-left">
-        <div class="footer-img">
-          <img src="img/firma.png" alt="Firma Antonia Mercé">
-        </div>
+  <!-- EMOJIS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+  <body>
+      <header>
+          <h1>COMPRA TUS ENTRADAS</h1>
+      </header>
+      <main>
+          <section id="buyTicket">
+              <form id="ticketForm" action="">
+                  <div>
+                      <label for="normal">Entrada normal - 30€</label>
+                      <button type="button" class="decrease">-</button> 
+                      <input
+                          type="number"
+                          name="normal"
+                          id="normal"
+                          min="0"
+                          value="0"
+                          data-price="30" />
+                      <button type="button" class="increase">+</button>  
+                  </div>
+
+                  <div>
+                      <label for="reducida">Entrada reducida - 20€</label>
+                      <button type="button" class="decrease">-</button> 
+                      <input
+                          type="number"
+                          name="reducida"
+                          id="reducida"
+                          min="0"
+                          value="0"
+                          data-price="20" />
+                      <button type="button" class="increase">+</button>  
+                  </div>
+
+                  <div>
+                      <label for="vip">Entrada VIP - 40€</label>
+                      <button type="button" class="decrease">-</button> 
+                      <input
+                          type="number"
+                          name="vip"
+                          id="vip"
+                          min="0"
+                          value="0"
+                          data-price="40" />
+                      <button type="button" class="increase">+</button>  
+                  </div>
+                  
+                  <div class="total-price-cont">
+                      <p>Precio total:</p>
+                      <p id="totalPrice"></p>
+                  </div>
+                  <input id="buyFood" type="submit" value="COMPRAR" class="disabled" />
+              </form>
+          </section>
+      </main>
+
+      <!-- FOOTER -->
+    <footer id="footer">
+    <div class="footer-left">
+      <div class="footer-img">
+        <img src="img/firma.png" alt="Firma Antonia Mercé">
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <p>info@antoniamerce.com</p>
+
+      <div class="social">
+        <a href="https://www.instagram.com/udit.es?igsh=aGt4NmFjZnRiYngz" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://x.com/udit_es?s=21&t=XTs37GJ9GUh0VqnBCOTRjA" target="_blank">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+
+        <a href="https://www.tiktok.com/@udit_es?_r=1&_t=ZN-91A0oE8GeZy" target="_blank">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+
+      <div class="politics">
+        <p>POLÍTCA DE PRIVACIDAD</p>
+        <p>AVISO LEGAL</p>
+        <p>CONFIGURACIÓN DE COOKIES</p>
       </div>
 
-      <div class="footer-right">
-        <p>info@antoniamerce.com</p>
-
-        <div class="social">
-          <a href="https://www.instagram.com/udit.es?igsh=aGt4NmFjZnRiYngz" target="_blank">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-
-          <a href="https://x.com/udit_es?s=21&t=XTs37GJ9GUh0VqnBCOTRjA" target="_blank">
-            <i class="fa-brands fa-x-twitter"></i>
-          </a>
-
-          <a href="https://www.tiktok.com/@udit_es?_r=1&_t=ZN-91A0oE8GeZy" target="_blank">
-            <i class="fa-brands fa-tiktok"></i>
-          </a>
-        </div>
+      <div class="copyright">
+        <p>© Martina García💃🏻</p>
       </div>
+    </footer>
 
-        <div class="politics">
-          <p>POLÍTCA DE PRIVACIDAD</p>
-          <p>AVISO LEGAL</p>
-          <p>CONFIGURACIÓN DE COOKIES</p>
-        </div>
-
-        <div class="copyright">
-          <p>© Martina García💃🏻</p>
-        </div>
-     </footer>
-
-      <script src="js/script.js"></script>
-    </body>
+    <script src="js/script.js"></script>
+  </body>
 </html>
